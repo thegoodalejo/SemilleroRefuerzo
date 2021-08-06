@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Verify shop" skipped="0" tests="2" time="59.84" timestamp="2021-08-05 04:56:37"><testcase name="Login with User"/><testcase name="Add an item to the cart"><failure message="&#10;Expected: an element that is visible&#10;     but: no matching element found by xpath: //div[@class='inventory_list'][count(div[@class='inventory_item']) &gt;= 1]" type="java.lang.AssertionError">
+Expected: an element that is visible
+     but: no matching element found by xpath: //div[@class='inventory_list'][count(div[@class='inventory_item']) &gt;= 1]</failure><system-err>
+Expected: an element that is visible
+     but: no matching element found by xpath: //div[@class='inventory_list'][count(div[@class='inventory_item']) &gt;= 1]&#13;
+com.sophossolutions.stepdefinitions.AddToCartStepDefinitions.iAmOnTheProductList(AddToCartStepDefinitions.java:38)&#13;
+✽.I am on the product list(file:///C:/Users/juan.blanco/Documents/semilleroTesting/SemilleroRefuerzo/SauceDemo/lib/src/test/resources/com/sophossolutions/features/check_shop.feature:13)&#13;
+</system-err></testcase></testsuite>
