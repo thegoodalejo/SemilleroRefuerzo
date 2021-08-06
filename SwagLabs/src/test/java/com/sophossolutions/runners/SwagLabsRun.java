@@ -9,7 +9,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
 		glue= "com.sophossolutions.stepdefinitions",
-		features= "src/test/resources/com/sophossolutions/features/add_items.feature",
+		features= "src/test/resources/com/sophossolutions/features/checkout.feature",
 		snippets= SnippetType.CAMELCASE)
-public class AddProducts
+public class SwagLabsRun
 {}

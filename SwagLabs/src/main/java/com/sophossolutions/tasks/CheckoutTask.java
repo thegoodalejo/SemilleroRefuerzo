@@ -27,8 +27,7 @@ public class CheckoutTask implements Task
 	@Override
 	public <T extends Actor> void performAs(T actor)
 	{
-		actor.attemptsTo(Click.on(Products.BTN_CART),
-			Click.on(Cart.BTN_CHECKOUT),
+		actor.attemptsTo(Click.on(Cart.BTN_CHECKOUT),
 			Enter.theValue(strFistname).into(Checkout.TXT_FIRSTNAME),
 			Enter.theValue(strLastName).into(Checkout.TXT_LASTNAME),
 			Enter.theValue(strZipcode).into(Checkout.TXT_ZIP),
