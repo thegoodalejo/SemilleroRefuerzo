@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.sophossolutions.models.Product;
+
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.targets.Target;
@@ -27,4 +29,29 @@ public class Utils {
 		return numbersElements;
 	}
 	
+	public static Product getProductMaxPrice(List<Product> listProduct) {
+		int indexMax = 0;
+		Double maxPrice = 0.0;
+		for (int i = 0; i < listProduct.size(); i++) {
+			Double currentPrice = listProduct.get(i).getStrPrice();
+			if ( currentPrice > maxPrice) {
+				indexMax = i;
+				maxPrice = currentPrice;
+			}
+		}
+		return listProduct.get(indexMax);
+	}
+	
+	public static Product getProductMinPrice(List<Product> listProduct) {
+		int indexMin = 0;
+		Double minPrice = listProduct.get(indexMin).getStrPrice();;
+		for (int i = 0; i < listProduct.size(); i++) {
+			Double currentPrice = listProduct.get(i).getStrPrice();
+			if ( currentPrice < minPrice) {
+				indexMin = i;
+				minPrice = currentPrice;
+			}
+		}
+		return listProduct.get(indexMin);
+	}
 }

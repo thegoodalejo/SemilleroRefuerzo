@@ -9,5 +9,5 @@ public class ProductsPage {
 	public static final Target BUTTON_ITEM = Target.the("Button of the item to shop").locatedBy("//div[div[text()='{0}'] ]//button");
 	
 	public static final Target ITEM_NAME_LIST = Target.the("item Name list").locatedBy("//div[@class='inventory_item_name']");
-	public static final Target ITEM_DESCRIPTION_LIST = Target.the("item Description list").locatedBy("//div[@class='inventory_item_name']");
+	public static final Target ITEM_DESCRIPTION_LIST = Target.the("item Description list").locatedBy("//div[@class='inventory_item_desc']");
 }
