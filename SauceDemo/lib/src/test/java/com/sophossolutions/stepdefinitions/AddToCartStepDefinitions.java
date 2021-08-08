@@ -16,19 +16,18 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 
 import com.sophossolutions.models.Product;
 import com.sophossolutions.task.AddItemToCart;
-import com.sophossolutions.task.ProductList;
 import com.sophossolutions.task.AvailableProducts;
 
 import static com.sophossolutions.constants.Constants.ACTOR_NAME;
 import static com.sophossolutions.constants.Constants.PRODUCTS_PURCHASED;
 import static com.sophossolutions.ui.CartPage.BUTTON_REMOVE_ITEM;
-import static com.sophossolutions.ui.CartPage.BUTTON_CHECKOUT;
 import static com.sophossolutions.ui.ProductsPage.ITEM_LIST_CHECK;
 import static com.sophossolutions.ui.ProductsPage.ICON_CART;
+import static com.sophossolutions.ui.CartPage.BUTTON_CHECKOUT;
 
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actors.OnlineCast;
-import net.serenitybdd.screenplay.targets.Target;
+
 
 public class AddToCartStepDefinitions { 
 	
@@ -58,8 +57,9 @@ public class AddToCartStepDefinitions {
 	public void iVerifyThatItIsInTheCart() {
 		List<Product> listPurchased = theActorInTheSpotlight().recall(PRODUCTS_PURCHASED);
 		for (Product product : listPurchased) {
-			theActorInTheSpotlight().should(seeThat(the(BUTTON_REMOVE_ITEM.of(product.getStrPrice().toString())), isVisible()));
+			theActorInTheSpotlight().should(seeThat(the(BUTTON_REMOVE_ITEM.of(product.getDblPrice().toString())), isVisible()));
 		}
+		theActorInTheSpotlight().wasAbleTo(Click.on(BUTTON_CHECKOUT));
 	}
 	
 }

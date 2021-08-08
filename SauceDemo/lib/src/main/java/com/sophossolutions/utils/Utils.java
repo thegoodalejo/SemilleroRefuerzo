@@ -10,6 +10,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.targets.Target;
 
+
 public class Utils {
 	
 	public static List<String> getTextOfElements(Target itemList, Actor actor){
@@ -33,7 +34,7 @@ public class Utils {
 		int indexMax = 0;
 		Double maxPrice = 0.0;
 		for (int i = 0; i < listProduct.size(); i++) {
-			Double currentPrice = listProduct.get(i).getStrPrice();
+			Double currentPrice = listProduct.get(i).getDblPrice();
 			if ( currentPrice > maxPrice) {
 				indexMax = i;
 				maxPrice = currentPrice;
@@ -44,14 +45,21 @@ public class Utils {
 	
 	public static Product getProductMinPrice(List<Product> listProduct) {
 		int indexMin = 0;
-		Double minPrice = listProduct.get(indexMin).getStrPrice();;
+		Double minPrice = listProduct.get(indexMin).getDblPrice();;
 		for (int i = 0; i < listProduct.size(); i++) {
-			Double currentPrice = listProduct.get(i).getStrPrice();
+			Double currentPrice = listProduct.get(i).getDblPrice();
 			if ( currentPrice < minPrice) {
 				indexMin = i;
 				minPrice = currentPrice;
 			}
 		}
 		return listProduct.get(indexMin);
+	}
+	public static Double calculatePrice(List<Product> listProducts) {
+		Double priceTotal = 0.0;
+		for (Product product : listProducts) {
+			priceTotal += product.getDblPrice();
+		}
+		return priceTotal;
 	}
 }

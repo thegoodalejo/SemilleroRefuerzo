@@ -13,6 +13,9 @@ Feature: Verify shop
 
   @VerifyShop
   Scenario: Add info to User
-    Given I am on the user page
-    When Continue the shop
+    Given Enter user data
+      | firstName  | Juan   |
+      | lastName   | Miguel |
+      | codePostal | 012345 |
+    When Calculate shop
     Then Verify the shop

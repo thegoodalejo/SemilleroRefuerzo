@@ -31,7 +31,7 @@ public class AddItemToCart implements Task {
 		listPurchased.add(currentProduct);
 		actor.remember(PRODUCTS_PURCHASED, listPurchased);
 		actor.wasAbleTo(
-				Click.on(BUTTON_ITEM.of(currentProduct.getStrPrice().toString()))
+				Click.on(BUTTON_ITEM.of(currentProduct.getDblPrice().toString()))
 		);
 		System.out.println("The element " + strKeyItem + " is:");
 		currentProduct.showProduct();
